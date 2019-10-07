@@ -1,0 +1,124 @@
+name: threepenny-gui-electron-example
+version: '0.1.0.0'
+category: Web
+author: Jeremy Barisch Rooney
+maintainer: barischj@tcd.ie
+copyright: 2017 Jeremy Barisch Rooney
+license: BSD3
+github: githubuser/threepenny-gui-electron-example
+
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >=4.7 && <5
+  - intro
+  - threepenny-gui
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Example
+
+executables:
+  threepenny-gui-electron-example-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - threepenny-gui-electron-example
+
+# tests:
+#   threepenny-gui-electron-example-test:
+#     main: Spec.hs
+#     source-dirs: test
+#     ghc-options:
+#     - -threaded
+#     - -rtsopts
+#     - -with-rtsopts=-N
+#     dependencies:
+#     - threepenny-gui-electron-example
+
+default-extensions:
+  ApplicativeDo
+  BangPatterns
+  BlockArguments
+  ConstraintKinds
+  DataKinds
+  DefaultSignatures
+  DeriveAnyClass
+  DeriveDataTypeable
+  DeriveFoldable
+  DeriveFunctor
+  DeriveGeneric
+  DeriveLift
+  DeriveTraversable
+  DerivingStrategies
+  DuplicateRecordFields
+  EmptyCase
+  EmptyDataDecls
+  ExistentialQuantification
+  ExtendedDefaultRules
+  FlexibleContexts
+  FlexibleInstances
+  FunctionalDependencies
+  GADTs
+  GeneralizedNewtypeDeriving
+  InstanceSigs
+  KindSignatures
+  LambdaCase
+  LiberalTypeSynonyms
+  MultiParamTypeClasses
+  MultiWayIf
+  NamedFieldPuns
+  NamedWildCards
+  NoImplicitPrelude
+  NoMonomorphismRestriction
+  OverloadedLabels
+  OverloadedLists
+  OverloadedStrings
+  PackageImports
+  PatternSynonyms
+  PolyKinds
+  QuasiQuotes
+  QuantifiedConstraints
+  RankNTypes
+  RecordWildCards
+  RecursiveDo
+  ScopedTypeVariables
+  StandaloneDeriving
+  TemplateHaskell
+  TupleSections
+  TypeApplications
+  TypeFamilies
+  TypeFamilyDependencies
+  TypeOperators
+  ViewPatterns
+
+ghc-options:
+  # - -fplugin=Type.Compare.Plugin
+  - -Wall
+  - -Wcompat
+  - -Wsemigroup
+  #- -Wincomplete-record-updates
+  #- -Wincomplete-uni-patterns
+  - -Werror
+  # - -Wwarn=type-defaults
+  - -Wwarn=unticked-promoted-constructors
+  - -Wwarn=deprecations
+  - -Wwarn=name-shadowing
+  - -Wwarn=orphans
+  - -Wwarn=redundant-constraints # TODO :: Re-enable for cleaning
+  # - -Wwarn=typed-holes
+  - -Wwarn=unused-imports        # TODO :: Re-enable for cleaning
+  - -Wwarn=unused-local-binds    # TODO :: Re-enable for cleaning
+  - -Wwarn=unused-matches
+  - -Wwarn=unused-top-binds    # TODO :: Re-enable for cleaning
+  # - -fdefer-typed-holes
+  # - -fmax-valid-hole-fits=0
+  # - -fprint-typechecker-elaboration
+  # - -fno-defer-type-errors
+  - -fshow-warning-groups

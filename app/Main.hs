@@ -1,5 +1,6 @@
 module Main where
 
+import           Prelude
 import           Example            (start)
 import           System.Environment (getArgs)
 import           System.IO
